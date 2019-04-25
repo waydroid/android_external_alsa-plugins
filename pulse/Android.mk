@@ -9,7 +9,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libasound_module_pcm_pulse
-LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_PROPRIETARY_MODULE := true
@@ -37,7 +37,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libasound_module_ctl_pulse
-LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_PROPRIETARY_MODULE := true
@@ -65,7 +65,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libasound_module_conf_pulse
-LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_PROPRIETARY_MODULE := true
