@@ -703,12 +703,17 @@ static int pulse_prepare(snd_pcm_ioplug_t * io)
 
 	map.channels = pcm->ss.channels;
 
+	pa_proplist* props = pa_proplist_new();
+	pa_proplist_sets(props, PA_PROP_APPLICATION_ICON_NAME, "waydroid");
+
 	if (io->stream == SND_PCM_STREAM_PLAYBACK)
 		pcm->stream =
-		    pa_stream_new(pcm->p->context, "ALSA Playback", &pcm->ss, &map);
+		    pa_stream_new_with_proplist(pcm->p->context, "ALSA Playback", &pcm->ss, &map, props);
 	else
 		pcm->stream =
-		    pa_stream_new(pcm->p->context, "ALSA Capture", &pcm->ss, &map);
+		    pa_stream_new_with_proplist(pcm->p->context, "ALSA Capture", &pcm->ss, &map, props);
+
+	pa_proplist_free(props);
 
 	if (!pcm->stream) {
 		err = -ENOMEM;
