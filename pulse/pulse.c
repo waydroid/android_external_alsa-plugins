@@ -147,11 +147,7 @@ snd_pulse_t *pulse_new(void)
 	if (!p->mainloop)
 		goto fail;
 
-	if (pa_get_binary_name(proc, sizeof(proc)))
-		snprintf(buf, sizeof(buf), "ALSA plug-in [%s]",
-			 pa_path_get_filename(proc));
-	else
-		snprintf(buf, sizeof(buf), "ALSA plug-in");
+	snprintf(buf, sizeof(buf), "Waydroid");
 	buf[sizeof(buf)-1] = 0;
 
 	p->context =
